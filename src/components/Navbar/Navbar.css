@@ -1,0 +1,176 @@
+
+.navbar{
+    width: 100%;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    font-size: 14px;
+    color: #e5e5e5;
+    background-image:  linear-gradient(180deg,rgba(0,0,0,0.7) 10%,transparent);
+    z-index: 1000; 
+}
+
+.navbar-left{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.navbar-left img{
+   width: 150px;
+}
+
+.navbar-left ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar-left ul li a{
+    color: #e5e5e5;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navbar-left ul li a:hover{
+    color: #FB4B29;
+    text-decoration: underline;
+}
+
+.navbar-right{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar-right .icons{
+    width: 20px;
+    cursor: pointer;
+}
+
+.navbar-right .profile{
+    border-radius: 4px;
+    width:  35px;
+}
+
+.navbar-profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.navbar .dropdown{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: max-content;
+    background: #191919;
+    padding:  18px 22px;
+    border-radius: 2px;
+    text-decoration: underline;
+    z-index: 1001;
+    display: none;
+}
+
+.navbar .dropdown p{
+    font-size:  13px;
+    cursor: pointer;
+}
+
+.navbar-profile:hover .dropdown{
+    display: block;
+}
+
+.iconss{
+    width: 45px;
+    cursor: pointer;
+}
+
+
+input::placeholder {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(252, 252, 252); 
+    opacity: 1;
+}
+
+
+.dropdown-results {
+    position: absolute;
+    background-color:rgb(14, 13, 13);
+    
+    color: #e5e5e5;
+    width: 100%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto; 
+    z-index: 999;
+}
+
+.dropdown-results ul {
+    list-style-type: none;
+    
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-results li {
+    padding: 9px 7%;
+    opacity: 0.75;
+    border-radius: 8px;
+    border-bottom: 1px solid #555; 
+    cursor: pointer;
+}
+
+.dropdown-results li:hover {
+    background-color: #333; 
+    
+}
+
+.inoF {
+    color: green;
+    margin-left: 3%;
+    font-size: 12px;
+}
+
+.outoF {
+    color: red;
+    margin-left: 3%;
+    font-size: 12px;
+}
+
+.search-container {
+    position: relative;
+    width: 300px;
+}
+
+
+.inp {
+    
+    width:100%;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.5); 
+    color: rgb(255, 255, 255);
+    border: 0;
+    outline: 0;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    color: rgb(252, 252, 252); 
+    opacity: 1;
+    background: rgba(43, 41, 41, 0.8);
+    transition: background 0.3s ease; 
+}
+.inp::placeholder{
+    opacity: 0.75;
+}
+
+.inp:hover, .inp:focus {
+    background: rgb(32, 30, 30); 
+}

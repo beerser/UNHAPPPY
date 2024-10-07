@@ -1,0 +1,115 @@
+/* Hero1 Section CSS */
+.hero1 { 
+    position: relative;
+}
+
+.banner-img1 {
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent, black 35%);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 35%);
+}
+
+.hero-caption1 {
+    position: absolute;
+    width: 100%;
+    padding-left: 6%;
+    bottom: 0;
+}
+
+.caption-img1 {
+    width: 100%;
+    max-width: 420px;
+    margin-bottom: 30px;
+}
+
+.hero-caption1 p {
+    max-width: 700px;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.hero-btns1 {
+    display: flex;
+    gap: 20px; /* เพิ่มช่องว่างระหว่างปุ่มให้มากขึ้น */
+    margin-bottom: 10px;
+}
+
+.hero-btns1 .btn1 {
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    background: #FB4B29;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 150px; /* ขนาดปุ่ม */
+    color: white; /* สีข้อความ */
+}
+
+.hero-btns1 .btn1 img {
+    width: 20px; /* ขนาดไอคอน */
+}
+
+.hero-btns1 .btn1.drak-btn1 {
+    background: #6d6d6eb3;
+    color: #fff;
+}
+
+.hero-btns1 .btn1:hover {
+    background: #6e0303;
+}
+
+.hero-btns1 .btn1.drak-btn1:hover {
+    background: #ececf066;
+}
+
+.more-cards1 {
+    padding-left: 6%;
+}
+
+.hero-caption1 img {
+    margin-top: 10%;
+    width: 40%;
+    margin-left: 4%;
+}
+
+
+
+@media (max-width: 1024px) {
+    .hero-caption1 .title-cards1 {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .hero-caption1, .more-cards1 {
+        padding-left: 4%;
+    }
+    .caption-img1 {
+        width: 40%;
+        margin-bottom: 10px;
+    }
+    .hero-caption1 p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .caption-img1 {
+        display: none;
+    }
+    .hero-caption1 .btn1 {
+        padding: 4px 10px;
+        font-size: 10px;
+        gap: 5px;
+    }
+    .hero-caption1 .btn1 img {
+        width: 15px;
+    }
+}
+

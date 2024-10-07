@@ -1,0 +1,112 @@
+.hero {
+    position: relative;
+}
+
+.banner-img {
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent, black 35%);
+    -webkit-mask-image: linear-gradient(to right,transparent,black,5%);
+}
+
+.hero-caption {
+    position: absolute;
+    width: 100%;
+    padding-left: 6%;
+    bottom: 0;
+}
+
+.caption-img {
+    width: 30%;
+    max-width: 420px;
+    margin-bottom: 30px;
+}
+
+.hero-caption p {
+    max-width: 700px;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 20px; /* เพิ่มช่องว่างระหว่างปุ่มให้มากขึ้น */
+    margin-bottom: 10px;
+}
+
+.hero-btns .btn {
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    background: #FB4B29;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 150px; /* ขนาดปุ่ม */
+    color: white; /* สีข้อความ */
+}
+
+.hero-btns .btn img {
+    width: 20px; /* ขนาดไอคอน */
+    
+}
+
+.hero-btns .btn.dark-btn {
+    background: #6d6d6eb3;
+    color: #fff;
+}
+
+.hero-btns .btn:hover {
+    background: #6e0303;
+}
+
+.hero-btns .btn.dark-btn:hover {
+    background: #ececf066;
+}
+
+.more-cards {
+    padding-left: 6%;
+}
+
+.hero-caption img {
+    margin-top: 10%;
+    width: 40%;
+    margin-left: 4%;
+}
+
+@media (max-width: 1024px) {
+    .hero-caption .title-cards {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .hero-caption, .more-cards {
+        padding-left: 4%;
+    }
+    .caption-img {
+        width: 40%;
+        margin-bottom: 10px;
+    }
+    .hero-caption p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .caption-img {
+        display: none;
+    }
+    .hero-caption .btn {
+        padding: 4px 10px;
+        font-size: 10px;
+        gap: 5px;
+    }
+    .hero-caption .btn img {
+        width: 15px;
+    }
+}

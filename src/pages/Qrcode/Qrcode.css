@@ -1,0 +1,108 @@
+.qrcode {
+    display: flex;
+    justify-content: center;   /* จัดให้อยู่ตรงกลางแนวนอน */
+    align-items: center;       /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    background-color: #1B212C; /* สีพื้นหลัง */
+    min-height: 100vh;         /* ความสูงเต็มหน้าจอ */
+    flex-direction: column;    /* ให้เนื้อหาภายในเรียงกันในแนวตั้ง */
+}
+
+.bgg {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;    /* จัดเนื้อหาภายในให้อยู่ในแนวตั้ง */
+    justify-content: center;   /* จัดให้อยู่ตรงกลางในแนวนอน */
+    align-items: center;       /* จัดให้อยู่ตรงกลางในแนวตั้ง */
+    background: rgba(0, 0, 0, 0.39); /* สีพื้นหลังโปร่งแสง */
+    border-radius: 30px;
+    padding: 20px;             /* เพิ่ม padding */
+    max-width: 500px;          /* ขนาดสูงสุดของกรอบ */
+    width: 100%;               /* ให้เต็มความกว้าง container */
+    text-align: center;        /* จัดเนื้อหาภายในให้อยู่ตรงกลาง */
+    position: relative;        /* เพื่อให้โลโก้จัดตำแหน่งได้ดีขึ้น */
+}
+
+nav img {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    top: -40px;                /* ปรับตำแหน่งเพื่อให้โลโก้ขยับขึ้น */
+    left: 50%;
+    transform: translateX(-50%); /* ใช้การเลื่อนตำแหน่งเพื่อจัดให้อยู่ตรงกลาง */
+    max-width: 260px;          /* ขนาดโลโก้ */
+}
+
+.cen {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* ระยะห่างจากข้อความ */
+}
+
+h2 {
+    margin-top: 50px; /* ปรับระยะห่างให้เข้ากับตำแหน่งโลโก้ */
+}
+
+.cen img {
+    width: 350px; /* ขนาด QR Code */
+    height: 300px;
+}
+
+.total {
+    background-color: rgba(0, 0, 0, 0.5); /* พื้นหลังโปร่งใส */
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 300px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.total span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.but {
+    display: flex;
+    justify-content: space-around;  /* กระจายปุ่มให้ห่างกัน */
+    align-items: center;
+    width: 100%;                     /* ให้ปุ่มขยายเต็มความกว้างของ container */
+    max-width: 500px;                /* จำกัดขนาดความกว้างสูงสุดของปุ่ม */
+    margin: 20px auto 0;             /* จัดตำแหน่งให้อยู่ตรงกลางและเพิ่ม margin ด้านบน */
+    padding: 0 20px;                 /* เพิ่ม padding ภายใน */
+}
+
+button, .butt {
+    color: #000000;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 0;
+    width: 160px;                    /* ปรับขนาดปุ่มให้มีความกว้างที่กำหนดไว้ชัดเจน */
+    padding: 15px 20px;              /* เพิ่มขนาด padding ให้ปุ่มใหญ่ขึ้น */
+    cursor: pointer;
+    text-align: center;
+}
+
+button {
+    background-color: #fff;
+}
+
+.butt {
+    background: #000;
+    color: #ffffff;
+}
+
+.butt:hover {
+    color: #fff;
+    background-color: rgba(202, 49, 49, 0.5);
+}
+
+button:hover {
+    background: rgba(57, 226, 93, 0.5);
+    color: #ffffff;
+}
