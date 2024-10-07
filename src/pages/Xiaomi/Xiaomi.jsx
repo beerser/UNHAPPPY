@@ -16,7 +16,7 @@ function Xiaomi() {
         <div className="hero-caption1">
         <img src={op}  className='caption-img1' alt="" />
           <div className="hero-btns1">
-            <button className='btn1'>Buy Now eafjiojoi</button>
+            <button className='btn1'>Buy Now </button>
             <button className='btn1 drak-btn1'>
               <img src={info_icon} alt="" />More Info
             </button>
