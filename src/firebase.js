@@ -149,3 +149,4 @@ const addToCartAndUpdateStock = async (productId, quantity) => {
 };
 
 export { auth, db, login, signup, logout, searchProducts, updateStock, addToCartAndUpdateStock };
+
