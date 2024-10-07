@@ -16,13 +16,13 @@ function Xiaomi() {
         <div className="hero-caption1">
         <img src={op}  className='caption-img1' alt="" />
           <div className="hero-btns1">
-            <button className='btn1'> Buy  </button>
+            <button className='btn1'> Buy Now  </button>
             <button className='btn1 drak-btn1'>
               <img src={info_icon} alt="" />More Info
             </button>
           </div>
           <TitleCards />
-        </div>ß
+        </div>
       </div>
       <div className="more-cards">
         <TitleCards title={"New Series"} />
