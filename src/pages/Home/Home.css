@@ -3,10 +3,13 @@
 }
 
 .banner-img {
-    width: 100%;
+    width: 100%; /* ให้ภาพกว้างเต็มที่ */
+    height: auto; /* ปรับความสูงอัตโนมัติตามอัตราส่วน */
+    max-height: 100vh; /* จำกัดความสูงสูงสุดที่ 90% ของความสูงหน้าจอ */
     mask-image: linear-gradient(to right, transparent, black 35%);
-    -webkit-mask-image: linear-gradient(to right,transparent,black,5%);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%);
 }
+
 
 .hero-caption {
     position: absolute;
@@ -52,7 +55,6 @@
 
 .hero-btns .btn img {
     width: 20px; /* ขนาดไอคอน */
-    
 }
 
 .hero-btns .btn.dark-btn {
@@ -70,6 +72,60 @@
 
 .more-cards {
     padding-left: 6%;
+    position: relative;
+}
+
+.product-container {
+    display: flex; /* ใช้ flexbox เพื่อจัดเรียงในแนวนอน */
+    overflow-x: auto; /* เพิ่ม scroll horizontal ถ้าจำเป็น */
+    padding: 20px 0; /* เพิ่ม padding บนและล่าง */
+    overflow-x: hidden;
+}
+
+.product-item {
+    flex: 0 0 auto; /* ไม่ให้เปลี่ยนขนาด */
+    margin: 20px; /* เพิ่มระยะห่างระหว่างสินค้า */
+    display: flex; /* ใช้ flexbox ใน product-item */
+    align-items: center; /* จัดกลางแนวตั้ง */
+    width: 300px; /* กำหนดความกว้างของแต่ละสินค้า */
+    background-color: #fff; /* สีพื้นหลังของกล่องสินค้า */
+    border: 1px solid #ddd; /* ขอบกล่อง */
+    border-radius: 8px; /* ขอบมน */
+    padding: 10px; /* Padding ของกล่อง */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เงาเบา */
+}
+
+.product-image {
+    width: 100px !important; /* ขนาดภาพ */
+    height: auto !important; /* คงสัดส่วนของภาพ */
+    border-radius: 8px; /* ขอบมน */
+    border: none !important;
+}
+
+.product-info-container {
+    margin-left: 1px; /* ระยะห่างระหว่างภาพและข้อมูล */
+    flex: 1; /* ให้พื้นที่ในแนวนอน */
+}
+
+.product-title {
+    font-size: 16px !important; /* ขนาดฟอนต์ของชื่อสินค้า */
+    font-weight: bold; /* ตัวหนา */
+    margin: 0; /* ไม่ให้มี margin */
+}
+
+.product-price {
+    font-size: 14px; /* ขนาดฟอนต์ของราคา */
+    margin: 5px 0; /* ระยะห่างบน-ล่าง */
+}
+
+.product-stock {
+    font-size: 14px; /* ขนาดฟอนต์ของสถานะสต็อก */
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column; /* จัดเรียงข้อมูลแนวตั้ง */
+    align-items: flex-start; /* จัดชิดซ้าย */
 }
 
 .hero-caption img {
