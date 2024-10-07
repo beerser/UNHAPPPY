@@ -1,13 +1,12 @@
-Hero2 Section CSS
+
 .hero2 {
     position: relative;
 }
 
 .banner-img2 {
-    width:10%;
-    
-    mask-image: linear-gradient(to right, transparent, black 35%);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 35%);
+    width:100% !important;
+    mask-image: linear-gradient(to right, transparent, black 35%) !important;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 35%) !important;
 }
 
 .hero-caption2 {
@@ -31,7 +30,7 @@ Hero2 Section CSS
 
 .hero-btns2 {
     display: flex;
-    gap: 20px; /* เพิ่มช่องว่างระหว่างปุ่มให้มากขึ้น */
+    gap: 20px; 
     margin-bottom: 10px;
 }
 
@@ -49,12 +48,12 @@ Hero2 Section CSS
     background: #FB4B29;
     border-radius: 4px;
     cursor: pointer;
-    width: 150px; /* ขนาดปุ่ม */
-    color: white; /* สีข้อความ */
+    width: 150px; 
+    color: white; 
 }
 
 .hero-btns2 .btn2 img {
-    width: 20px; /* ขนาดไอคอน */
+    width: 20px; 
 }
 
 .hero-btns2 .btn2.dark-btn2 {
@@ -80,24 +79,24 @@ Hero2 Section CSS
     margin-left: 4%;
 }
 
-/* ปรับ TitleCards เฉพาะใน hero2 */
+
 .hero2 .title-cards {
     display: flex;
-    justify-content: space-between; /* จัดการ์ดให้อยู่ห่างกันอย่างสมดุล */
-    max-width: 1200px; /* กำหนดขนาดสูงสุดของการ์ด */
-    margin: 0 auto; /* จัดให้อยู่ตรงกลาง */
-    gap: 20px; /* เพิ่มระยะห่างระหว่างการ์ด */
+    justify-content: space-between; 
+    max-width: 1200px;
+    margin: 0 auto; 
+    gap: 20px; 
     padding: 20px;
 }
 .banner-img2 {
     width: 100%;
-    height: auto; /* ปรับให้ภาพยืดตามขนาดความกว้างของคอนเทนต์ */
+    height: auto; 
 }
 
 .caption-img2 {
     width: 40%;
     margin-top: 20px;
-    max-width: 500px; /* กำหนดขนาดสูงสุดให้กับภาพ */
+    max-width: 500px; 
 }
 
 
