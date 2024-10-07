@@ -1,11 +1,11 @@
-/* Hero2 Section CSS */
+Hero2 Section CSS
 .hero2 {
     position: relative;
 }
 
 .banner-img2 {
-    width:100%;
-    height: 1049px;
+    width:10%;
+    
     mask-image: linear-gradient(to right, transparent, black 35%);
     -webkit-mask-image: linear-gradient(to right, transparent, black 35%);
 }
