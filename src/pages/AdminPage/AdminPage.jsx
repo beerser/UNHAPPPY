@@ -10,7 +10,7 @@ import './AdminPage.css'; // นำเข้า CSS สำหรับการ�
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const AdminPage = () => {
-  const [userRole, setUserRole] = useState(null);
+  const [role, setUserRole] = useState(null);
   const [products, setProducts] = useState([]);
   const [productDetails, setProductDetails] = useState({
     cpu: "",
@@ -98,7 +98,7 @@ const AdminPage = () => {
     ],
   };
 
-  if (userRole !== "admin") {
+  if (role !== "admin") {
     return <div>Loading...</div>;
   }
 

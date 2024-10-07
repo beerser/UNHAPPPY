@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'; 
+import { db } from '../../firebase'; // ตรวจสอบให้แน่ใจว่าเส้นทางนี้ถูกต้อง
+import { doc, setDoc, getDoc } from "firebase/firestore";
 import './Profile.css';
 
 const Profile = () => {
@@ -9,6 +11,28 @@ const Profile = () => {
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
 
+  const userId = "YOUR_USER_ID"; // แทนที่ด้วย user ID ของผู้ใช้
+
+  // ดึงข้อมูลผู้ใช้จาก Firestore
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      const userDoc = await getDoc(doc(db, "users", userId));
+      if (userDoc.exists()) {
+        const userData = userDoc.data();
+        setName(userData.name);
+        setEmail(userData.email);
+        setPhone(userData.phone);
+        setAddress(userData.address);
+        setGender(userData.gender || 'Male');
+        setProfilePic(userData.profilePic || null);
+      } else {
+        console.log("No such user!");
+      }
+    };
+
+    fetchUserProfile();
+  }, [userId]);
+
   const handleGenderChange = (event) => {
     setGender(event.target.value);
   };
@@ -17,8 +41,22 @@ const Profile = () => {
     setProfilePic(URL.createObjectURL(event.target.files[0]));
   };
 
-  const handleSave = () => {
-    alert('Profile Saved!');
+  const handleSave = async () => {
+    try {
+      const userRef = doc(db, "users", userId);
+      await setDoc(userRef, {
+        name,
+        email,
+        phone,
+        address,
+        gender,
+        profilePic
+      }, { merge: true }); // ใช้ merge เพื่อไม่ให้ลบข้อมูลที่มีอยู่
+      alert('Profile Saved!');
+    } catch (error) {
+      console.error("Error saving profile:", error);
+      alert('Error saving profile.');
+    }
   };
 
   return (
