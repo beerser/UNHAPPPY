@@ -5,25 +5,39 @@ import iphone_banner from '../../assets/iphone-15-white.png';
 import info_icon from '../../assets/info_icon.png';
 import Footer from '../../components/Footer/Footer';
 import { searchProducts } from '../../firebase'; // นำเข้าฟังก์ชันดึงข้อมูล
+import { useNavigate } from 'react-router-dom'; // ใช้นำทาง
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-  const [searchTerm, setSearchTerm] = useState(''); // ประกาศ searchTerm
-  const productsRef = useRef(null); // สร้าง ref สำหรับ container
+  const [searchTerm, setSearchTerm] = useState('');
+  const productsRef = useRef(null);
+  const navigate = useNavigate(); // สร้างการนำทาง
 
   useEffect(() => {
     const fetchProducts = async () => {
       const result = await searchProducts(searchTerm.toLowerCase());
-      // กรองเฉพาะสินค้าที่ชื่อรวม "iphone"
       const filteredProducts = result.filter(product => product.nameProduct.toLowerCase().includes('iphone'));
       setProducts(filteredProducts);
     };
 
     fetchProducts();
-  }, [searchTerm]); // เรียกใช้ fetchProducts เมื่อ searchTerm เปลี่ยน
+  }, [searchTerm]);
 
-  // Wheel event handler สำหรับเลื่อนในแนวนอน
+  const handleAddToCart = (product) => {
+    // ตรวจสอบว่าตะกร้ามีอยู่หรือไม่ใน localStorage
+    const storedCart = localStorage.getItem('cart');
+    const cart = storedCart ? JSON.parse(storedCart) : [];
+
+    // เพิ่มผลิตภัณฑ์ลงในตะกร้า
+    const updatedCart = [...cart, product];
+    localStorage.setItem('cart', JSON.stringify(updatedCart)); // บันทึกตะกร้าใน localStorage
+    alert(`${product.nameProduct} added to cart`); // แจ้งเตือนเมื่อเพิ่มสินค้า
+
+    navigate('/cart'); // นำทางไปยังหน้าตะกร้า
+  };
+
   const handleWheel = (event) => {
+    event.preventDefault();
     if (productsRef.current) {
       if (event.deltaY > 0) {
         productsRef.current.scrollLeft += 100; // Scroll right
@@ -36,9 +50,9 @@ const Home = () => {
   useEffect(() => {
     const currentRef = productsRef.current;
     if (currentRef) {
-      currentRef.addEventListener('wheel', handleWheel); // เพิ่ม event listener
+      currentRef.addEventListener('wheel', handleWheel);
       return () => {
-        currentRef.removeEventListener('wheel', handleWheel); // ทำความสะอาดเมื่อคอมโพเนนต์ถูกทำลาย
+        currentRef.removeEventListener('wheel', handleWheel);
       };
     }
   }, []);
@@ -65,7 +79,7 @@ const Home = () => {
             products.map(product => (
               <div key={product.id} className="product-item">
                 <img src={product.image} alt={product.nameProduct} className="product-image" />
-                <div className="product-info-container"> {/* Container สำหรับข้อมูลสินค้า */}
+                <div className="product-info-container">
                   <div className="product-info">
                     <span>Name: {product.nameProduct}</span>
                     <span>Price: {product.price} ฿</span>
@@ -75,6 +89,9 @@ const Home = () => {
                       <span style={{ color: 'red' }}>Out of stock</span>
                     )}
                   </div>
+                  <button className='add-to-cart-btn' onClick={() => handleAddToCart(product)}>
+                    Add to Cart
+                  </button>
                 </div>
               </div>
             ))
