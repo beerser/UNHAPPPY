@@ -7,7 +7,8 @@
     position: fixed;
     font-size: 14px;
     color: #e5e5e5;
-    background-image:  linear-gradient(180deg,rgba(0,0,0,0.7) 10%,transparent);
+    /* background-image:  linear-gradient(180deg,rgba(0, 0, 0, 1) 10%,transparent); */
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1000; 
 }
 
@@ -21,7 +22,7 @@
     width: 100%;
     max-width: 230px;  /* ขนาดสูงสุดของโลโก้ */
     position: absolute;
-    top: 10px;  /* ระยะห่างจากด้านบน */
+    top: 25px;  /* ระยะห่างจากด้านบน */
     left: 40%;  /* ตั้งให้อยู่ตรงกลางหน้าจอ */
     transform: translatey(-25%);
 }

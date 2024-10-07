@@ -1,6 +1,6 @@
 import React, { useState } from 'react';  
 import './Navbar.css';
-import logo from '../../assets/loogoo.png';
+import logo from '../../assets/kabb.png';
 import search_icon from '../../assets/search_icon.svg';
 import cart_icon from '../../assets/cart.svg';
 import profile_img from '../../assets/vector.png';
