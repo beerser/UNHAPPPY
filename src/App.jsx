@@ -7,7 +7,7 @@ import Collections from './pages/Collections/Collections'
 import Cart from './pages/Cart/Cart'
 import Qrcode from './pages/Qrcode/Qrcode'
 import Success from './pages/Success/Success'
-
+import Profile from './pages/Profile/Profile'
 
 
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
@@ -15,6 +15,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from './firebase'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -66,6 +67,7 @@ const App = () => {
         <Route path='/cart' element={<Cart />} />
         <Route path='/qrcode' element={<Qrcode />} />
         <Route path='/success' element={<Success/>} />
+        <Route path='/success' element={<Profile/>} />
       </Routes>
     </div>
   )
