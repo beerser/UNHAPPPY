@@ -77,7 +77,7 @@ const Home = () => {
         <div className="product-container" ref={productsRef}>
           {products.length > 0 ? (
             products.map(product => (
-              <div key={product.id} className="product-item">
+              <div key={product.id} className="product-item2">
                 <img src={product.image} alt={product.nameProduct} className="product-image" />
                 <div className="product-info-container">
                   <div className="product-info">
