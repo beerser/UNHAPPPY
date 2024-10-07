@@ -17,10 +17,14 @@
     gap: 50px;
 }
 
-.navbar-left img{
-   width: 150px;
+.navbar-left img {
+    width: 100%;
+    max-width: 230px;  /* ขนาดสูงสุดของโลโก้ */
+    position: absolute;
+    top: 10px;  /* ระยะห่างจากด้านบน */
+    left: 40%;  /* ตั้งให้อยู่ตรงกลางหน้าจอ */
+    transform: translatey(-25%);
 }
-
 .navbar-left ul{
     display: flex;
     list-style: none;

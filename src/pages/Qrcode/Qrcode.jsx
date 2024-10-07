@@ -3,6 +3,7 @@ import './Qrcode.css';
 import logo from '../../assets/kabb.png';  // โลโก้ของคุณ
 import cenn from '../../assets/prompt.png';  // รูป QR Code ของคุณ
 import { useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 function Qrcode() {
     const location = useLocation();  // ใช้รับข้อมูลที่ส่งมาจากหน้าตะกร้า
@@ -12,12 +13,12 @@ function Qrcode() {
     const { total } = location.state || { total: 0 };
 
     const handleCancel = () => {
-        // ส่งข้อมูลสินค้าเมื่อกดปุ่ม Cancel
+        toast.error("Fail Payment");
         navigate('/cart');
     };
 
     const handleConfirm = () => {
-        // เมื่อกด Confirm สามารถส่งข้อมูลไปยังหน้าที่ต้องการ
+        toast.success("Payment Success");
         navigate('/success');
     };
 

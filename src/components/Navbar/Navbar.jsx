@@ -1,6 +1,6 @@
-import React, { useState } from 'react'; 
+import React, { useState } from 'react';  
 import './Navbar.css';
-import logo from '../../assets/kabb.png';
+import logo from '../../assets/loogoo.png';
 import search_icon from '../../assets/search_icon.svg';
 import cart_icon from '../../assets/cart.svg';
 import profile_img from '../../assets/vector.png';
@@ -12,7 +12,6 @@ const Navbar = () => {
   const [products, setProducts] = useState([]);
   const [isSearching, setIsSearching] = useState(false); 
 
- 
   const handleSearch = async (e) => {
     const term = e.target.value;
     setSearchTerm(term);
@@ -30,13 +29,13 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <div className="navbar-left">
-        <img src={logo} alt="Kabb logo" />
         <ul>
           <li><a href="/">iPhone</a></li>
           <li><a href="/samsung">Samsung</a></li>
           <li><a href="/xiaomi">Xiaomi</a></li>
           <li><a href="/collections">Collections</a></li>
         </ul>
+        <img src={logo} alt="Logo" />
       </div>
       <div className="navbar-right">
         <img src={search_icon} alt="Search icon" className='icons' />
