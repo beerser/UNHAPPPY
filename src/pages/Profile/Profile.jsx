@@ -1,12 +1,11 @@
 import React from 'react'
 import './Profile.css'
+import Navbar from '../../components/Navbar/Navbar'
 
 function Profile() {
   return (
-    <div className=' profile'>
-      <h1>Kuy beer</h1>
-    </div>
   )
 }
 
 export default Profile
+
