@@ -127,7 +127,7 @@ const Cart = () => {
       <h3>{total} ฿</h3>
     </div>
 
-    <button onClick={handleProceedToQR}>Proceed to QR</button> {/* ปุ่มไปที่ QR Code */}
+    <button onClick={handleProceedToQR}>Process to QR</button> {/* ปุ่มไปที่ QR Code */}
   </div>
 </div>
 
