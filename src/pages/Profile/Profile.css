@@ -1,86 +1,108 @@
-/* Profile.css */
 .profile-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-  background-color: #000000;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.profile-header h1 {
-  font-size: 24px;
-  margin-bottom: 5px;
-}
-
-.profile-header p {
-  font-size: 14px;
-  color: #666;
-}
-
-.profile-content {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.profile-info {
-  flex: 1;
-  margin-right: 20px;
-}
-
-.profile-info label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.profile-info input[type="text"],
-.profile-info input[type="email"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.profile-info input[type="radio"] {
-  margin-right: 10px;
-}
-
-.profile-info p {
-  margin-bottom: 10px;
-}
-
-.profile-picture-section {
-  width: 180px;
-  text-align: center;
-}
-
-.profile-picture {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  object-fit: cover;
-}
-
-.upload-button {
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.saveButton {
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  display: block;
-  margin-top: 20px;
-}
+    width: 50%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #1d1c1c;
+    color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  
+    position: absolute; /* ใช้ position absolute สำหรับจัดกลาง */
+    top: 50%; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    left: 50%; /* จัดให้อยู่กึ่งกลางแนวนอน */
+    transform: translate(-50%, -50%); /* ย้ายตำแหน่งกลับมาครึ่งหนึ่งของความกว้างและสูง */
+  }
+  
+  /* สไตล์ของ heading หรือหัวข้อ */
+  h2 {
+    font-size: 34px; /* ขนาดตัวอักษรของหัวข้อ */
+    margin-bottom: 20px; /* เพิ่มพื้นที่ว่างด้านล่างของหัวข้อ */
+    text-align: center; /* จัดให้ข้อความหัวข้ออยู่ตรงกลาง */
+  }
+  
+  /* จัดการ layout ของ profile section */
+  .profile-section {
+    display: flex; /* ใช้ flexbox เพื่อจัด layout แบบแถว */
+    justify-content: space-between; /* กระจาย space ระหว่าง items */
+    gap: 20px; /* เพิ่มช่องว่างระหว่าง items */
+  }
+  
+  /* Section สำหรับรูปโปรไฟล์ */
+  .profile-image-section {
+    flex: 1; /* ให้พื้นที่ section นี้เป็น 1 ส่วนของทั้งหมด */
+    display: flex; /* ใช้ flexbox เพื่อจัด layout */
+    flex-direction: column; /* จัด layout ของ item ให้เป็นแนวตั้ง */
+    align-items: center; /* จัด items ให้อยู่ตรงกลางแนวแกน x */
+  }
+  
+  /* สไตล์ของรูปโปรไฟล์ */
+  .profile-pic {
+    width: 200px; /* กำหนดความกว้างของรูปโปรไฟล์ */
+    height: 200px; /* กำหนดความสูงของรูปโปรไฟล์ */
+    border-radius: 50%; /* ทำรูปโปรไฟล์ให้เป็นวงกลม */
+    object-fit: cover; /* ให้รูปถูกครอบและแสดงเต็มพื้นที่โดยไม่บิดเบือน */
+    margin-bottom: 15px; /* เพิ่มช่องว่างระหว่างรูปและ input เลือกรูป */
+  }
+  
+  /* สไตล์ของ input ที่ใช้เลือกไฟล์รูป */
+  input[type="file"] {
+    margin-top: 10px; /* เพิ่มช่องว่างด้านบน input */
+    font-size: 14px; /* ขนาดตัวอักษรใน input */
+    margin-left: 60px;
+  }
+  
+  /* Section สำหรับฟอร์มกรอกข้อมูล */
+  .profile-input-section {
+    flex: 2; /* ให้พื้นที่ section นี้เป็น 2 ส่วนของทั้งหมด */
+    display: flex; /* ใช้ flexbox เพื่อจัด layout */
+    flex-direction: column; /* จัด layout ให้เป็นแนวตั้ง */
+    gap: 15px; /* เพิ่มช่องว่างระหว่าง items */
+  }
+  
+  /* สำหรับแต่ละช่องกรอกข้อมูลในฟอร์ม */
+  .profile-input {
+    display: flex; /* ใช้ flexbox สำหรับจัด layout */
+    flex-direction: column; /* จัด layout ของ label และ input ให้เป็นแนวตั้ง */
+  }
+  
+  /* สไตล์ของ label ข้อมูล */
+  label {
+    font-weight: bold; /* ทำให้ข้อความใน label หนาขึ้น */
+    font-size: 14px; /* ขนาดตัวอักษรของ label */
+    margin-bottom: 5px; /* เพิ่มพื้นที่ว่างระหว่าง label และ input */
+  }
+  
+  /* สไตล์ของ input ฟิลด์กรอกข้อมูล */
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    padding: 10px; /* เพิ่มพื้นที่ว่างภายใน input */
+    font-size: 14px; /* ขนาดตัวอักษรใน input */
+    border: 1px solid #ccc; /* เส้นขอบสีเทาอ่อน */
+    border-radius: 5px; /* ทำมุมของ input ให้โค้งมน */
+    width: 100%; /* กำหนดให้ input กว้างเต็มพื้นที่ของ container */
+  }
+  
+  /* สไตล์ของ textarea สำหรับกรอกที่อยู่ */
+  textarea {
+    resize: vertical; /* อนุญาตให้ปรับขนาดเฉพาะในแนวตั้ง */
+  }
+  
+  /* สไตล์ของปุ่ม Save */
+  button.save-button {
+    margin: 0 auto;
+    padding: 10px; /* เพิ่มพื้นที่ภายในปุ่ม */
+    background-color: #1db431; /* พื้นหลังสีส้ม */
+    color: white; /* สีของข้อความในปุ่ม */
+    border: none; /* ลบเส้นขอบของปุ่ม */
+    border-radius: 5px; /* ทำมุมของปุ่มให้โค้งมน */
+    font-size: 14px; /* ขนาดตัวอักษรในปุ่ม */
+    cursor: pointer; /* เปลี่ยน cursor เป็น pointer เมื่อ hover บนปุ่ม */
+  }
+  
+  /* สไตล์เมื่อผู้ใช้ hover บนปุ่ม Save */
+  button.save-button:hover {
+    background-color: #ff5500; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+  }
+  

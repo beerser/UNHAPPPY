@@ -7,14 +7,17 @@ import { searchProducts, addToCartAndUpdateStock } from '../../firebase';
 
 const Cart = () => {
   const [products, setProducts] = useState([]); 
-  const [cart, setCart] = useState([]); 
+  const [cart, setCart] = useState(() => {
+    // Load cart items from localStorage on page load
+    const storedCart = localStorage.getItem('cart');
+    return storedCart ? JSON.parse(storedCart) : [];
+  }); 
   const [searchTerm, setSearchTerm] = useState(''); 
-  const productsRef = useRef(null); // Reference for container of product list
+  const productsRef = useRef(null); 
 
   const navigate = useNavigate();  
 
   const shippingCost = 10; 
-
   const subtotal = cart.reduce((total, item) => total + item.price, 0);
   const total = subtotal + shippingCost;
 
@@ -49,8 +52,13 @@ const Cart = () => {
   const handleBuyNow = async (product) => {
     if (product.stock > 0) { 
       await addToCartAndUpdateStock(product.id, 1); 
-      setCart((prevCart) => [...prevCart, product]); 
-      alert(`${product.nameProduct} added to cart`); // Show alert when added to cart
+      
+      // Add product to cart and update localStorage
+      const updatedCart = [...cart, product];
+      setCart(updatedCart);
+      localStorage.setItem('cart', JSON.stringify(updatedCart)); // Save cart to localStorage
+
+      alert(`${product.nameProduct} added to cart`); 
     } else {
       alert('Product is out of stock');
     }
@@ -106,7 +114,7 @@ const Cart = () => {
         <div className="cart-items">
           {cart.length > 0 ? (
             cart.map((item, index) => (
-              <div className="product-item">
+              <div className="product-item" key={index}>
                 <img src={item.image} alt={item.nameProduct} className="product-image" />
                 <div className="product-details">
                   <span>{item.nameProduct}</span>
