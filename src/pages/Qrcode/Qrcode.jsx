@@ -19,7 +19,7 @@ function Qrcode() {
 
     const handleConfirm = () => {
         toast.success("Payment Success");
-        navigate('/success');
+        navigate('/');
     };
 
     return (

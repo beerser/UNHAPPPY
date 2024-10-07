@@ -1,103 +1,38 @@
-import React, { useState, useEffect, useRef } from 'react'; 
+import React, { useState, useEffect } from 'react';  
 import './Cart.css';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import { useNavigate } from 'react-router-dom';  
-import { searchProducts, addToCartAndUpdateStock } from '../../firebase';
+import { searchProducts } from '../../firebase';
 
 const Cart = () => {
-  const [products, setProducts] = useState([]); 
-  const [cart, setCart] = useState([]); 
-  const [searchTerm, setSearchTerm] = useState(''); 
-  const productsRef = useRef(null); // Reference for container of product list
+  const [cart, setCart] = useState(() => {
+    const storedCart = localStorage.getItem('cart');
+    return storedCart ? JSON.parse(storedCart) : [];
+  }); 
 
   const navigate = useNavigate();  
-
   const shippingCost = 10; 
-
   const subtotal = cart.reduce((total, item) => total + item.price, 0);
   const total = subtotal + shippingCost;
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const result = await searchProducts(searchTerm.toLowerCase());
-      setProducts(result);
-    };
-
-    fetchProducts();
-  }, [searchTerm]);
-
-  // Wheel event handler for scrolling
-  const handleWheel = (event) => {
-    if (event.deltaY > 0) {
-      productsRef.current.scrollTop += 100; // Scroll down
-    } else {
-      productsRef.current.scrollTop -= 100; // Scroll up
-    }
-  };
-
-  useEffect(() => {
-    const currentRef = productsRef.current;
-    if (currentRef) {
-      currentRef.addEventListener('wheel', handleWheel); // Add wheel event listener
-      return () => {
-        currentRef.removeEventListener('wheel', handleWheel); // Clean up event when component unmounts
-      };
-    }
-  }, []);
-
-  const handleBuyNow = async (product) => {
-    if (product.stock > 0) { 
-      await addToCartAndUpdateStock(product.id, 1); 
-      setCart((prevCart) => [...prevCart, product]); 
-      alert(`${product.nameProduct} added to cart`); // Show alert when added to cart
-    } else {
-      alert('Product is out of stock');
-    }
+  const handleRemoveFromCart = (index) => {
+    const updatedCart = cart.filter((item, i) => i !== index);
+    setCart(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
 
   const handleProceedToQR = () => {
-    navigate('/qrcode', { state: { total } });
+    if (cart.length > 0) {
+      navigate('/qrcode', { state: { total } });
+    } else {
+      alert('Your cart is empty!');
+    }
   };
 
   return (
     <div className='cart'>
-      <div className="nev">
-        <Navbar />
-      </div>
-
-      {/* Container for available products */}
-      <div className="products-list" ref={productsRef}>
-        <h2 className='Av'>Available Products:</h2>
-        <ul>
-          {products.length > 0 ? (
-            products.map(product => (
-              <li key={product.id} className="product-item">
-                <img src={product.image} alt={product.nameProduct} className="product-image" />
-                <div className="product-info">
-                  <span>{product.nameProduct}</span>
-                  <span>Price: {product.price} ฿</span>
-                  {product.stock > 0 ? (
-                    <span style={{ color: 'green' }}>In stock: {product.stock}</span>
-                  ) : (
-                    <span style={{ color: 'red' }}>Out of stock</span>
-                  )}
-                </div>
-                <button 
-                  className="buy-now-btn" 
-                  onClick={() => handleBuyNow(product)} 
-                  disabled={product.stock <= 0}
-                >
-                  Add to cart
-                </button>
-              </li>
-            ))
-          ) : (
-            <p>No products found.</p>
-          )}
-        </ul>
-      </div>
-
+      <Navbar />
       <div className="cart-summary">
         <h2 className='summary'>Cart Summary:</h2>
       </div>
@@ -106,19 +41,21 @@ const Cart = () => {
         <div className="cart-items">
           {cart.length > 0 ? (
             cart.map((item, index) => (
-              <div className="product-item">
+              <div className="product-item" key={index}>
                 <img src={item.image} alt={item.nameProduct} className="product-image" />
                 <div className="product-details">
                   <span>{item.nameProduct}</span>
-                  <span>cpu: {item.cpu}</span>
-                  <span>ram: {item.ram}</span>
-                  <span>rom: {item.rom}</span>
-                  <span>screen: {item.screen_size}</span>
-                  <span>battery: {item.battery}</span>
-                  <span>price: {item.price} ฿</span>
+                  <span>CPU: {item.cpu}</span>
+                  <span>RAM: {item.ram}</span>
+                  <span>ROM: {item.rom}</span>
+                  <span>Screen: {item.screen_size}</span>
+                  <span>Battery: {item.battery}</span>
+                  <span>Price: {item.price} ฿</span>
                 </div>
+                <button className="remove-btn" onClick={() => handleRemoveFromCart(index)}>
+                  Remove
+                </button>
               </div>
-
             ))
           ) : (
             <p>Your cart is empty.</p>
@@ -144,8 +81,6 @@ const Cart = () => {
           <button onClick={handleProceedToQR}>Process to QR</button>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 };

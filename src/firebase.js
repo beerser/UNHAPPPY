@@ -1,4 +1,4 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app"; 
 import { 
     createUserWithEmailAndPassword,
     getAuth,
@@ -14,10 +14,12 @@ import {
     where,
     doc, 
     updateDoc, 
-    increment
+    increment,
+    getDoc // Added correct import for getting document data
 } from "firebase/firestore";
 import { toast } from "react-toastify";
 
+// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyBtNoZSWSgk4VbdxIhX1U_c1rW6uCVK_dY",
     authDomain: "happyphone888-97d1b.firebaseapp.com",
@@ -31,11 +33,12 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
+// Sign up function
 const signup = async (name, email, password) => {
     try {
         const res = await createUserWithEmailAndPassword(auth, email, password);
         const user = res.user;
-        await addDoc(collection(db, "users"), { // แก้ไขคอลเล็กชันเป็น "users"
+        await addDoc(collection(db, "users"), {
             uid: user.uid,
             name,
             authProvider: "local",
@@ -43,31 +46,34 @@ const signup = async (name, email, password) => {
         });
         toast.success('Successfully signed up!');
     } catch (error) {
-        console.error(error);
+        console.error("Error signing up:", error);
         toast.error(error.code.split('/')[1].split('-').join(" "));
     }
 };
 
+// Login function
 const login = async (email, password) => {
     try {
         await signInWithEmailAndPassword(auth, email, password);
         toast.success('Successfully logged in!');
     } catch (error) {
-        console.error(error);
+        console.error("Error logging in:", error);
         toast.error(error.code.split('/')[1].split('-').join(" "));
     }
 };
 
+// Logout function
 const logout = () => {
     try {
         signOut(auth);
         toast.info('You have been logged out.');
     } catch (error) {
-        console.error("Error logging out: ", error);
+        console.error("Error logging out:", error);
         toast.error('Failed to log out.');
     }
 };
 
+// Search products by term
 const searchProducts = async (searchTerm) => {
     try {
         const q = query(
@@ -98,14 +104,15 @@ const searchProducts = async (searchTerm) => {
     }
 };
 
+// Update stock for a product
 const updateStock = async (productId, quantity) => {
     try {
         const productRef = doc(db, "products", productId); 
-        const productSnap = await productRef.get();
+        const productSnap = await getDoc(productRef); // Corrected to getDoc
 
         if (productSnap.exists()) {
             const currentStock = productSnap.data().stock;
-            if (currentStock >= quantity) { // ตรวจสอบให้แน่ใจว่าสินค้าในสต็อกเพียงพอ
+            if (currentStock >= quantity) {
                 await updateDoc(productRef, {
                     stock: increment(-quantity)
                 });
@@ -119,10 +126,11 @@ const updateStock = async (productId, quantity) => {
             toast.error("Product not found.");
         }
     } catch (error) {
-        console.error("Error updating stock: ", error);
+        console.error("Error updating stock:", error);
     }
 };
 
+// Add product to cart and update stock
 const addToCartAndUpdateStock = async (productId, quantity) => {
     try {
         await addDoc(collection(db, "cart"), {
@@ -135,9 +143,10 @@ const addToCartAndUpdateStock = async (productId, quantity) => {
         await updateStock(productId, quantity);
         console.log("Stock updated successfully after adding to cart!");
     } catch (error) {
-        console.error("Error processing purchase: ", error);
+        console.error("Error processing purchase:", error);
         toast.error("Error processing purchase.");
     }
 };
 
 export { auth, db, login, signup, logout, searchProducts, updateStock, addToCartAndUpdateStock };
+
