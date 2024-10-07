@@ -1,80 +1,61 @@
-.nev {
-    display: flex;
-}
-body{
-    background:rgba(red, green, blue, 0.0) !important;
-}
-.cart-product-image {
-    width: 100%; 
-    max-width: 220px;
-    height: auto;
-    margin-right: 10px;
+/* Products list */
+.products-list {
+    max-height: 400px; /* Set a maximum height to enable scrolling */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    padding: 10px;
+    margin-bottom: 20px; 
+    border: 1px solid #ccc; 
+    background-color: #2a2a2a;
     border-radius: 10px;
-    object-fit: cover; 
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); 
 }
-
-.product-image {
-    width: 80px;
-    height: auto;
-    margin-right: 12px;
-    border-radius: 8px;
-    object-fit: cover;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-
-.cart-item {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    background-color: #a54040;
+/* Product item layout */
+.product-item {
+    display: flex; /* Flexbox for horizontal layout */
+    align-items: flex-start; /* Align items at the start */
+    padding: 10px;
+    background-color: #353333;
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-}
-.cart-item p{
-    text-align: center;
-}
-
-.item-details h3 {
-    font-size: 18px; 
-    margin: 0 0 7px;
-    color: #f5f5f5;
-}
-
-.item-details {
-    flex: 1; 
-}
-
-.item-details p {
+  }
+  
+  /* Product image styling */
+  .product-image {
+    width: 100px; /* Adjust the width of the image */
+    height: auto;
+    margin-right: 15px; /* Add spacing between image and details */
+    border-radius: 8px;
+    object-fit: cover; /* Make sure the image scales correctly */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Product details layout */
+  .product-details {
+    display: flex;
+    flex-direction: column; /* Arrange details vertically */
+    justify-content: flex-start; /* Align details at the start */
+    color: #fff;
+  }
+  
+  /* Styling for each detail */
+  .product-details span {
+    margin-bottom: 5px; /* Space between details */
     font-size: 14px;
-    color: #aaa;
-}
+    color: #fff;
+  }
+  
 
 
-.cart-summary {
+/* Product info in the list */
+.product-info {
+    flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    margin: 20px 0;
-    padding: 12px;
-    background-color: #1e1e1e;
-    border-radius: 10px;
-}
-.cart-summary h2{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
+    color: #fff;
 }
 
-.cart-summary p {
-    font-size: 15px;
-    color: #ddd;
-}
-
-
+/* Buy now button */
 .buy-now-btn {
     background-color: #FB4B29;
     color: white;
@@ -83,7 +64,6 @@ body{
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
-    margin-left: 10px;
     transition: background-color 0.3s ease;
 }
 
@@ -96,12 +76,12 @@ body{
     cursor: not-allowed;
 }
 
-
+/* Cart container */
 .cart-container {
     display: flex;
     justify-content: space-between;
     padding: 25px;
-    background-color:#2e2b2b;
+    background-color: #2e2b2b;
     color: white;
     border-radius: 10px;
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
@@ -109,52 +89,51 @@ body{
 }
 
 .cart-items {
-    display: flex;
-    flex-direction: column; /* จัดเรียงรายการสินค้าในแนวตั้ง */
-    width: 100%;
+    flex: 1;
     background-color: #2a2a2a;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-height: 400px; /* Set a maximum height to enable scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
+/* Product details in the cart */
+.product-details span {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* Payment details section */
 .payment-details {
     width: 30%;  
     background-color: #2a2a2a;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
-    margin-left: 20px;  
+    margin-left: 20px;
 }
 
-.payment-details h2 {
-    font-size: 22px;
+/* Cart summary inside payment details */
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
+}
+
+.cart-summary p {
+    font-size: 16px;
+    color: #ddd;
+}
+
+.cart-summary h3 {
+    font-size: 18px;
     color: white;
 }
 
-.payment-details p {
-    font-size: 15px;
-    margin: 10px 0;
-    color: #d0d0d0;
-}
-
-
-.payment-details input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: 1px solid #444;
-    background-color: #b64d4d;
-    color: white;
-}
-
-.payment-details input::placeholder {
-    color: #bbb;
-}
-
-
+/* Payment details button */
 .payment-details button {
     width: 100%;
     padding: 12px;
@@ -172,66 +151,15 @@ body{
     background-color: #d94224;
 }
 
-
-.card-types img {
-    width: 100%;
-    max-width: 35px;
-    margin-right: 10px;
-}
-
-
-.sidebar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 60px;
-    background-color: #554e4e;
-    padding: 20px;
-}
-
-.sidebar a {
-    display: block;
-    margin: 20px 0;
-    color: #ddd;
-    text-decoration: none;
-    text-align: center;
-}
-
-.sidebar a:hover {
-    color: #FB4B29;
-}
-
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .cart-container {
-    flex-direction: column;
-    align-items: center;
-  }
+    .cart-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .cart-items, .payment-details {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-}
-
-
-.cart-items img {
-    width: 100%;
-    max-width: 150px;            /* ขนาดสูงสุดของรูป */
-    margin-right: 15px;          /* ระยะห่างระหว่างรูปกับข้อความ */
-    border-radius: 8px;          /* ทำให้มุมมน */
-    object-fit: cover;           /* ปรับการแสดงผลของรูป */
-}
-
-.cart-items .product-details {
-    display: flex;
-    flex-direction: column;      /* จัดข้อความให้อยู่ในคอลัมน์ */
-    justify-content: center;     /* จัดให้อยู่ตรงกลางแนวตั้ง */
-}
-
-.cart-items .product-details span {
-    color: #fff;
-    margin-bottom: 5px;          /* ระยะห่างระหว่างแต่ละบรรทัด */
-    font-size: 14px;
+    .cart-items, .payment-details {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }

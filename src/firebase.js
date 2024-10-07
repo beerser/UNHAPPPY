@@ -18,7 +18,6 @@ import {
 } from "firebase/firestore";
 import { toast } from "react-toastify";
 
-
 const firebaseConfig = {
     apiKey: "AIzaSyBtNoZSWSgk4VbdxIhX1U_c1rW6uCVK_dY",
     authDomain: "happyphone888-97d1b.firebaseapp.com",
@@ -28,17 +27,15 @@ const firebaseConfig = {
     appId: "1:428834158869:web:023ac02b805666b5e1511c"
 };
 
-
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-
 
 const signup = async (name, email, password) => {
     try {
         const res = await createUserWithEmailAndPassword(auth, email, password);
         const user = res.user;
-        await addDoc(collection(db, "user"), {
+        await addDoc(collection(db, "users"), { // แก้ไขคอลเล็กชันเป็น "users"
             uid: user.uid,
             name,
             authProvider: "local",
@@ -46,7 +43,7 @@ const signup = async (name, email, password) => {
         });
         toast.success('Successfully signed up!');
     } catch (error) {
-        console.log(error);
+        console.error(error);
         toast.error(error.code.split('/')[1].split('-').join(" "));
     }
 };
@@ -56,21 +53,28 @@ const login = async (email, password) => {
         await signInWithEmailAndPassword(auth, email, password);
         toast.success('Successfully logged in!');
     } catch (error) {
-        console.log(error);
+        console.error(error);
         toast.error(error.code.split('/')[1].split('-').join(" "));
     }
 };
 
-
 const logout = () => {
-    toast.info('You have been logged out.');
-    signOut(auth);
+    try {
+        signOut(auth);
+        toast.info('You have been logged out.');
+    } catch (error) {
+        console.error("Error logging out: ", error);
+        toast.error('Failed to log out.');
+    }
 };
-
 
 const searchProducts = async (searchTerm) => {
     try {
-        const q = query(collection(db, "products"), where("nameProduct", ">=", searchTerm), where("nameProduct", "<=", searchTerm + '\uf8ff'));
+        const q = query(
+            collection(db, "products"), 
+            where("nameProduct", ">=", searchTerm), 
+            where("nameProduct", "<=", searchTerm + '\uf8ff')
+        );
         const querySnapshot = await getDocs(q);
         const products = [];
         querySnapshot.forEach((doc) => {
@@ -94,35 +98,46 @@ const searchProducts = async (searchTerm) => {
     }
 };
 
-
 const updateStock = async (productId, quantity) => {
     try {
         const productRef = doc(db, "products", productId); 
-        await updateDoc(productRef, {
-            stock: increment(-quantity) 
-        });
-        console.log("Stock updated successfully!");
+        const productSnap = await productRef.get();
+
+        if (productSnap.exists()) {
+            const currentStock = productSnap.data().stock;
+            if (currentStock >= quantity) { // ตรวจสอบให้แน่ใจว่าสินค้าในสต็อกเพียงพอ
+                await updateDoc(productRef, {
+                    stock: increment(-quantity)
+                });
+                console.log("Stock updated successfully!");
+            } else {
+                console.error("Insufficient stock for product:", productId);
+                toast.error("Insufficient stock.");
+            }
+        } else {
+            console.error("Product not found:", productId);
+            toast.error("Product not found.");
+        }
     } catch (error) {
         console.error("Error updating stock: ", error);
     }
 };
 
-
 const addToCartAndUpdateStock = async (productId, quantity) => {
-  try {
-   
-    await addDoc(collection(db, "cart"), {
-      productId: productId,
-      quantity: quantity,
-      addedAt: new Date()
-    });
-    console.log("Product added to cart successfully!");
+    try {
+        await addDoc(collection(db, "cart"), {
+            productId: productId,
+            quantity: quantity,
+            addedAt: new Date()
+        });
+        console.log("Product added to cart successfully!");
 
-    await updateStock(productId, quantity);
-    console.log("Stock updated successfully after adding to cart!");
-  } catch (error) {
-    console.error("Error processing purchase: ", error);
-  }
+        await updateStock(productId, quantity);
+        console.log("Stock updated successfully after adding to cart!");
+    } catch (error) {
+        console.error("Error processing purchase: ", error);
+        toast.error("Error processing purchase.");
+    }
 };
 
 export { auth, db, login, signup, logout, searchProducts, updateStock, addToCartAndUpdateStock };
