@@ -15,7 +15,7 @@ import {
     doc, 
     updateDoc, 
     increment,
-    getDoc // Added correct import for getting document data
+    getDoc 
 } from "firebase/firestore";
 import { toast } from "react-toastify";
 
@@ -33,16 +33,23 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
+// Get current user
+const getCurrentUser = () => {
+    return auth.currentUser;
+};
+
 // Sign up function
 const signup = async (name, email, password) => {
     try {
         const res = await createUserWithEmailAndPassword(auth, email, password);
         const user = res.user;
-        await addDoc(collection(db, "users"), {
+        await addDoc(collection(db, "user"), {
             uid: user.uid,
             name,
             authProvider: "local",
             email,
+            cart: [],
+            role
         });
         toast.success('Successfully signed up!');
     } catch (error) {
@@ -108,7 +115,7 @@ const searchProducts = async (searchTerm) => {
 const updateStock = async (productId, quantity) => {
     try {
         const productRef = doc(db, "products", productId); 
-        const productSnap = await getDoc(productRef); // Corrected to getDoc
+        const productSnap = await getDoc(productRef);
 
         if (productSnap.exists()) {
             const currentStock = productSnap.data().stock;
@@ -133,10 +140,17 @@ const updateStock = async (productId, quantity) => {
 // Add product to cart and update stock
 const addToCartAndUpdateStock = async (productId, quantity) => {
     try {
+        const user = getCurrentUser();
+        if (!user) {
+            toast.error("You must be logged in to add items to your cart.");
+            return;
+        }
+
         await addDoc(collection(db, "cart"), {
             productId: productId,
             quantity: quantity,
-            addedAt: new Date()
+            addedAt: new Date(),
+            userId: user.uid // Store userId to link with user
         });
         console.log("Product added to cart successfully!");
 
@@ -149,4 +163,3 @@ const addToCartAndUpdateStock = async (productId, quantity) => {
 };
 
 export { auth, db, login, signup, logout, searchProducts, updateStock, addToCartAndUpdateStock };
-

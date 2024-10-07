@@ -36,7 +36,6 @@ const Cart = () => {
       <div className="cart-summary">
         <h2 className='summary'>Cart Summary:</h2>
       </div>
-
       <div className="cart-container"> 
         <div className="cart-items">
           {cart.length > 0 ? (
