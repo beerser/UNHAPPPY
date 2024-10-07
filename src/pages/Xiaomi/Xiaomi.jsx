@@ -16,7 +16,7 @@ function Xiaomi() {
   useEffect(() => {
     const fetchProducts = async () => {
       const result = await searchProducts(searchTerm.toLowerCase());
-      const filteredProducts = result.filter(product => product.nameProduct.toLowerCase().includes(''));
+      const filteredProducts = result.filter(product => product.nameProduct.toLowerCase().includes('xiaomi'));
       setProducts(filteredProducts);
     };
 

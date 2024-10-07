@@ -5,6 +5,8 @@
 
 .banner-img1 {
     width: 100%;
+    height: auto;
+    max-height: 100vh;
     mask-image: linear-gradient(to right, transparent, black 35%);
     -webkit-mask-image: linear-gradient(to right, transparent, black 35%);
 }
@@ -22,6 +24,22 @@
     margin-bottom: 30px;
 }
 
+.add-to-cart-btn {
+    width: 100%;
+    height: 45px;
+    background-color: #FB4B29;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #FB4B29;
+}
+
 .hero-caption1 p {
     max-width: 700px;
     font-size: 17px;
@@ -30,7 +48,7 @@
 
 .hero-btns1 {
     display: flex;
-    gap: 20px; /* เพิ่มช่องว่างระหว่างปุ่มให้มากขึ้น */
+    gap: 20px;
     margin-bottom: 10px;
 }
 
@@ -47,12 +65,12 @@
     background: #FB4B29;
     border-radius: 4px;
     cursor: pointer;
-    width: 150px; /* ขนาดปุ่ม */
-    color: white; /* สีข้อความ */
+    width: 150px;
+    color: white;
 }
 
 .hero-btns1 .btn1 img {
-    width: 20px; /* ขนาดไอคอน */
+    width: 20px;
 }
 
 .hero-btns1 .btn1.drak-btn1 {
@@ -70,6 +88,7 @@
 
 .more-cards1 {
     padding-left: 6%;
+    position: relative;
 }
 
 .hero-caption1 img {
@@ -78,7 +97,63 @@
     margin-left: 4%;
 }
 
+.product-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px 0;
+    overflow-x: hidden;
+}
 
+.product-item2 { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #272727;
+    border-radius: 8px;
+    border: none;
+    width: calc(100% - 10px);
+    box-sizing: border-box;
+    margin-left: 5%; 
+    margin-bottom: 15px;
+    height: 100%;
+}
+
+.product-image {
+    width: 100px !important;
+    height: auto !important;
+    border-radius: 8px;
+    border: none !important;
+}
+
+.product-info-container {
+    margin-left: 1px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-title {
+    font-size: 16px !important;
+    font-weight: bold;
+    margin: 0;
+}
+
+.product-price {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.product-stock {
+    font-size: 14px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1; /* Allow this to grow and push the button down */
+}
 
 @media (max-width: 1024px) {
     .hero-caption1 .title-cards1 {
@@ -112,4 +187,3 @@
         width: 15px;
     }
 }
-
