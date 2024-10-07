@@ -67,7 +67,7 @@ const App = () => {
         <Route path='/cart' element={<Cart />} />
         <Route path='/qrcode' element={<Qrcode />} />
         <Route path='/success' element={<Success/>} />
-        <Route path='/success' element={<Profile/>} />
+        <Route path='/profile' element={<Profile/>} />
       </Routes>
     </div>
   )
