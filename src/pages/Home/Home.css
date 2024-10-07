@@ -69,6 +69,8 @@
 }
 
 .hero-btns .btn img {
+    position: relative;
+    top: -5px;
     width: 20px;
 }
 
