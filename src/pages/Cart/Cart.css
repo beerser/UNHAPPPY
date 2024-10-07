@@ -1,52 +1,45 @@
-/* Products list */
 .products-list {
-    max-height: 400px; /* Set a maximum height to enable scrolling */
-    overflow-y: auto;  /* Enable vertical scrolling */
+    max-height: 400px;
+    overflow-y: auto;
     padding: 10px;
-    margin-bottom: 20px; 
-    border: 1px solid #ccc; 
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
     background-color: #2a2a2a;
     border-radius: 10px;
 }
-/* Product item layout */
+
 .product-item {
-    display: flex; /* Flexbox for horizontal layout */
-    align-items: flex-start; /* Align items at the start */
+    display: flex;
+    align-items: flex-start;
     padding: 10px;
     background-color: #353333;
     border-radius: 10px;
     margin-bottom: 10px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Product image styling */
-  .product-image {
-    width: 100px; /* Adjust the width of the image */
+}
+
+.product-image {
+    width: 199px;
     height: auto;
-    margin-right: 15px; /* Add spacing between image and details */
+    margin-right: 15px;
     border-radius: 8px;
-    object-fit: cover; /* Make sure the image scales correctly */
+    object-fit: cover;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Product details layout */
-  .product-details {
+}
+
+.product-details {
     display: flex;
-    flex-direction: column; /* Arrange details vertically */
-    justify-content: flex-start; /* Align details at the start */
+    flex-direction: column;
+    justify-content: flex-start;
     color: #fff;
-  }
-  
-  /* Styling for each detail */
-  .product-details span {
-    margin-bottom: 5px; /* Space between details */
+}
+
+.product-details span {
+    margin-bottom: 5px;
     font-size: 14px;
     color: #fff;
-  }
-  
+}
 
-
-/* Product info in the list */
 .product-info {
     flex: 1;
     display: flex;
@@ -55,7 +48,6 @@
     color: #fff;
 }
 
-/* Buy now button */
 .buy-now-btn {
     background-color: #FB4B29;
     color: white;
@@ -76,7 +68,6 @@
     cursor: not-allowed;
 }
 
-/* Cart container */
 .cart-container {
     display: flex;
     justify-content: space-between;
@@ -94,20 +85,18 @@
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-height: 400px; /* Set a maximum height to enable scrolling */
-    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 400px;
+    overflow-y: auto;
 }
 
-/* Product details in the cart */
 .product-details span {
     color: #fff;
     margin-bottom: 5px;
     font-size: 14px;
 }
 
-/* Payment details section */
 .payment-details {
-    width: 30%;  
+    width: 30%;
     background-color: #2a2a2a;
     padding: 20px;
     border-radius: 10px;
@@ -115,7 +104,6 @@
     margin-left: 20px;
 }
 
-/* Cart summary inside payment details */
 .cart-summary {
     display: flex;
     justify-content: space-between;
@@ -133,7 +121,6 @@
     color: white;
 }
 
-/* Payment details button */
 .payment-details button {
     width: 100%;
     padding: 12px;
@@ -151,7 +138,6 @@
     background-color: #d94224;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .cart-container {
         flex-direction: column;
