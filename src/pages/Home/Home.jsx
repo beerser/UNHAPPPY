@@ -3,6 +3,7 @@ import './Home.css';
 import Navbar from '../../components/Navbar/Navbar';
 import iphone_banner from '../../assets/iphone-15-white.png';
 import info_icon from '../../assets/info_icon.png';
+import op from '../../assets/iPhone_all_new.png';
 import Footer from '../../components/Footer/Footer';
 import { searchProducts } from '../../firebase'; // นำเข้าฟังก์ชันดึงข้อมูล
 import { useNavigate } from 'react-router-dom'; // ใช้นำทาง
@@ -63,6 +64,7 @@ const Home = () => {
       <div className="hero">
         <img src={iphone_banner} alt="" className="banner-img" />
         <div className="hero-caption">
+        <img src={op} className='caption-img2' alt="" />
           <div className="hero-btns">
             <button className='btn'>Buy Now</button>
             <button className='btn dark-btn'>

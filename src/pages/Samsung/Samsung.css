@@ -1,4 +1,4 @@
-/* Hero2 Section CSS */
+/* Hero2 Section CSS */ 
 .hero2 { 
     position: relative;
 }
@@ -73,7 +73,7 @@
     width: 20px;
 }
 
-.hero-btns2 .btn2.drak-btn2 {
+.hero-btns2 .btn2.dark-btn2 { /* แก้ไขชื่อให้ถูกต้อง */
     background: #6d6d6eb3;
     color: #fff;
 }
@@ -82,7 +82,7 @@
     background: #6e0303;
 }
 
-.hero-btns2 .btn2.drak-btn2:hover {
+.hero-btns2 .btn2.dark-btn2:hover { /* ใช้ dark-btn2 ที่นี่ */
     background: #ececf066;
 }
 

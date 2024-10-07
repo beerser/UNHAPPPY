@@ -66,7 +66,8 @@ function Samsung() {
           <div className="hero-btns2">
             <button className='btn2'>Buy Now</button>
             <button className='btn2 dark-btn2'>
-              <img src={info_icon} alt="" />More Info
+              <img src={info_icon} alt=""/>
+              More Info
             </button>
           </div>
         </div>
