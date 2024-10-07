@@ -38,7 +38,7 @@ const Cart = () => {
       </div>
 
       <div className="cart-container"> 
-        <div className="payment-details">
+        <div className="cart-items">
           {cart.length > 0 ? (
             cart.map((item, index) => (
               <div className="product-item" key={index}>

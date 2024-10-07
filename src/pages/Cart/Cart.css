@@ -81,17 +81,17 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease, border-color 0.3s ease; 
-    margin: 20px auto; 
+    margin: 20px auto; /* Center the element horizontally */
 }
 .payment-details:hover {
-    border-color: #d94224;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-color: #d94224; /* เปลี่ยนสี border เมื่อเลื่อนเมาส์ไปที่องค์ประกอบ */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* เพิ่มเงาเมื่อเลื่อนเมาส์ */
 }
 
 @media (max-width: 768px) {
     .payment-details {
         width: 100%; 
-        margin-top: 20px; 
+        margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
     }
 }
 
