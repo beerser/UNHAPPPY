@@ -16,11 +16,15 @@ function Xiaomi() {
         <div className="hero-caption1">
         <img src={op}  className='caption-img1' alt="" />
           <div className="hero-btns1">
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             <button className='btn1'> Now kuy ได้ยังไอ้โดม  </button>
 =======
             <button className='btn1'> win kuy yai  </button>
 >>>>>>> Stashed changes
+=======
+            <button className='btn1'> Now kuy ได้แล้วไอ้เวรเบียร์  </button>
+>>>>>>> 2bbba292c99f5264b323b3f67b686bb07ca6274d
             <button className='btn1 drak-btn1'>
               <img src={info_icon} alt="info" />More Info
             </button>
