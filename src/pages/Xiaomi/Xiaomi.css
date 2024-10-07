@@ -6,7 +6,7 @@
 .banner-img1 {
     width: 100%;
     mask-image: linear-gradient(to right, transparent, black 35%);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 35%);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%);
 }
 
 .hero-caption1 {
@@ -17,7 +17,7 @@
 }
 
 .caption-img1 {
-    width: 100%;
+    width: 30%;
     max-width: 420px;
     margin-bottom: 30px;
 }

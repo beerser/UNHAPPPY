@@ -16,9 +16,13 @@ function Xiaomi() {
         <div className="hero-caption1">
         <img src={op}  className='caption-img1' alt="" />
           <div className="hero-btns1">
+<<<<<<< Updated upstream
             <button className='btn1'> Now kuy ได้ยังไอ้โดม  </button>
+=======
+            <button className='btn1'> win kuy yai  </button>
+>>>>>>> Stashed changes
             <button className='btn1 drak-btn1'>
-              <img src={info_icon} alt="" />More Info
+              <img src={info_icon} alt="info" />More Info
             </button>
           </div>
           <TitleCards />
@@ -33,6 +37,6 @@ function Xiaomi() {
       <Footer />
     </div>
   );
-}
+};
 
 export default Xiaomi;
