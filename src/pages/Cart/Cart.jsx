@@ -80,6 +80,7 @@ const Cart = () => {
           <button onClick={handleProceedToQR}>Process to QR</button>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

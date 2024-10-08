@@ -1,7 +1,7 @@
 .collections{
     position: relative;
-    background: rgb(105, 100, 100);
-    background: radial-gradient(circle, rgb(97, 92, 92) 41%, rgba(0,57,255,0.27512254901960786) 100%);
+    background: rgb(238,129,113);
+background: linear-gradient(13deg, rgba(238,129,113,1) 0%, rgba(251,207,156,1) 100%);
    
 }
 .coll{

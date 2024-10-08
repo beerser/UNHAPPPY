@@ -5,6 +5,11 @@
     margin-bottom: 30px; /* เพิ่มระยะห่างด้านล่าง */
     
 }
+.cart{
+    background: rgb(238,129,113);
+background: linear-gradient(13deg, rgba(238,129,113,1) 0%, rgba(251,207,156,1) 100%);
+
+}
 .cart-summary p {
     font-size: 14px;
     color: #ddd;
@@ -16,6 +21,7 @@
 }
 .summary{
     margin-top: 7%;
+    margin-left: 2%;
 }
 
 .cart-container {
