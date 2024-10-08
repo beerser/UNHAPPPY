@@ -1,4 +1,4 @@
-/* Hero2 Section CSS */ 
+/* Hero2 Section CSS */
 .hero2 { 
     position: relative;
 }
@@ -7,8 +7,6 @@
     width: 100%;
     height: auto;
     max-height: 100vh;
-    mask-image: linear-gradient(to right, transparent, black 35%);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 35%);
 }
 
 .hero-caption2 {
@@ -28,7 +26,7 @@
 .add-to-cart-btn {
     width: 100%;
     height: 45px;
-    background-color: #FB4B29;
+    background-color: #FB4B29; /* ใช้สี Coral Red เดิม */
     color: white;
     border: none;
     border-radius: 6px;
@@ -38,7 +36,7 @@
 }
 
 .add-to-cart-btn:hover {
-    background-color: #FB4B29;
+    background-color: #FB4B29; /* ใช้สี Coral Red เดิม */
 }
 
 .hero-caption2 p {
@@ -63,7 +61,7 @@
     gap: 10px;
     font-size: 15px;
     font-weight: 600;
-    background: #FB4B29;
+    background: #FB4B29; /* ใช้สี Coral Red เดิม */
     border-radius: 4px;
     cursor: pointer;
     width: 150px;
@@ -76,17 +74,17 @@
     width: 20px;
 }
 
-.hero-btns2 .btn2.dark-btn2 { /* แก้ไขชื่อให้ถูกต้อง */
-    background: #6d6d6eb3;
+.hero-btns2 .btn2.dark-btn2 {
+    background: #6d6d6eb3; /* ใช้สี Cool Gray เหมือนเดิม */
     color: #fff;
 }
 
 .hero-btns2 .btn2:hover {
-    background: #6e0303;
+    background: #6e0303; /* ใช้สีแดงเข้มเดิม */
 }
 
-.hero-btns2 .btn2.dark-btn2:hover { /* ใช้ dark-btn2 ที่นี่ */
-    background: #ececf066;
+.hero-btns2 .btn2.dark-btn2:hover {
+    background: #03030366 !important; /* ใช้สีดำโปร่งใสเหมือนเดิม */
 }
 
 .more-cards2 {
@@ -112,7 +110,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
-    background-color: #272727;
+    background-color: #2F2E41; /* ใช้สีเทาเข้มเกือบดำเหมือนเดิม */
     border-radius: 8px;
     border: none;
     width: calc(100% - 10px);
@@ -145,6 +143,7 @@
 .product-price {
     font-size: 14px;
     margin: 5px 0;
+    color: #FF8C42; /* ใช้สี Tangerine Orange สำหรับราคา */
 }
 
 .product-stock {
@@ -155,7 +154,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    flex-grow: 1; /* Allow this to grow and push the button down */
+    flex-grow: 1;
 }
 
 @media (max-width: 1024px) {
@@ -189,4 +188,8 @@
     .hero-caption2 .btn2 img {
         width: 15px;
     }
+}
+
+.samsung {
+    background-color: #2d2d2b; /* ใช้สีพื้นหลังเข้มเหมือนเดิม */
 }

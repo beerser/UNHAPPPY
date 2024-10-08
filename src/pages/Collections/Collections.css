@@ -1,15 +1,16 @@
-.collections{
+.collections {
     position: relative;
-    background: rgb(238,129,113);
-background: linear-gradient(13deg, rgba(238,129,113,1) 0%, rgba(251,207,156,1) 100%);
-   
+    background: #2d2d2b;
 }
-.coll{
+
+.coll {
     padding: 8%;
 }
-.nav{
+
+.nav {
     display: flex;
 }
-.fot{
-    background: black;
+
+.fot {
+    background: #2d2d2b; /* ใช้สีพื้นหลังเข้มเหมือนเดิม */
 }

@@ -86,9 +86,9 @@ const Home = () => {
                     <span>Name: {product.nameProduct}</span>
                     <span>Price: {product.price} ฿</span>
                     {product.stock > 0 ? (
-                      <span style={{ color: 'green' }}>In stock: {product.stock}</span>
+                      <span style={{ color: '#2A9D8F' }}>In stock: {product.stock}</span>
                     ) : (
-                      <span style={{ color: 'red' }}>Out of stock</span>
+                      <span style={{ color: '#FF6F61' }}>Out of stock</span>
                     )}
                   </div>
                   <button className='add-to-cart-btn' onClick={() => handleAddToCart(product)}>

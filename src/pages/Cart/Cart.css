@@ -3,13 +3,12 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px; /* เพิ่มระยะห่างด้านล่าง */
-    
 }
-.cart{
-    background: rgb(238,129,113);
-background: linear-gradient(13deg, rgba(238,129,113,1) 0%, rgba(251,207,156,1) 100%);
 
+.cart {
+    background: #2d2d2b ; /* ใช้สี Coral Red */
 }
+
 .cart-summary p {
     font-size: 14px;
     color: #ddd;
@@ -19,7 +18,8 @@ background: linear-gradient(13deg, rgba(238,129,113,1) 0%, rgba(251,207,156,1) 1
     font-size: 16px;
     color: white;
 }
-.summary{
+
+.summary {
     margin-top: 7%;
     margin-left: 2%;
 }
@@ -28,11 +28,12 @@ background: linear-gradient(13deg, rgba(238,129,113,1) 0%, rgba(251,207,156,1) 1
     display: flex;
     justify-content: center; /* Center items in the container */
     padding: 20px;
-    background-color: #2e2b2b;
+    background-color: #2d2d2b; /* ใช้สีพื้นหลังเข้ม */
     color: white;
     border-radius: 8px;
     margin: 20px;
 }
+
 .cart-items {
     flex: 1;
     background-color: #1e1e1e;
@@ -47,7 +48,7 @@ background: linear-gradient(13deg, rgba(238,129,113,1) 0%, rgba(251,207,156,1) 1
     display: flex;
     align-items: flex-start;
     padding: 10px;
-    background-color: #272727;
+    background-color: #2F2E41; /* ใช้สีเทาเข้มเกือบดำ */
     border-radius: 8px;
     margin-bottom: 8px;
     border: none;
@@ -75,7 +76,6 @@ background: linear-gradient(13deg, rgba(238,129,113,1) 0%, rgba(251,207,156,1) 1
     color: #fff;
     font-size: 16px;
     flex-grow: 1;
-    
 }
 
 .payment-details {
@@ -89,8 +89,9 @@ background: linear-gradient(13deg, rgba(238,129,113,1) 0%, rgba(251,207,156,1) 1
     transition: box-shadow 0.3s ease, border-color 0.3s ease; 
     margin: 20px auto; /* Center the element horizontally */
 }
+
 .payment-details:hover {
-    border-color: #d94224; /* เปลี่ยนสี border เมื่อเลื่อนเมาส์ไปที่องค์ประกอบ */
+    border-color: #FF6F61; /* ใช้สี Coral Red */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* เพิ่มเงาเมื่อเลื่อนเมาส์ */
 }
 
@@ -105,7 +106,7 @@ background: linear-gradient(13deg, rgba(238,129,113,1) 0%, rgba(251,207,156,1) 1
     width: 100%;
     padding: 10px;
     margin-top: 16px;
-    background-color: #fb4b29;
+    background-color: #FB4B29; /* ใช้สี Coral Red */
     color: white;
     border: none;
     border-radius: 6px;
@@ -115,10 +116,8 @@ background: linear-gradient(13deg, rgba(238,129,113,1) 0%, rgba(251,207,156,1) 1
 }
 
 .payment-details button:hover {
-    background-color: #d94224;
+    background-color: #6e0303; /* ใช้สีแดงเข้ม */
 }
-
-
 
 .remove-btn {
     background-color: #d94224;
