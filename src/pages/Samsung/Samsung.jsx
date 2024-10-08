@@ -64,10 +64,10 @@ function Samsung() {
         <div className="hero-caption2">
           <img src={opp} className='capn-img2' alt="" />
           <div className="hero-btns2">
-            <button className='btn2'>Buy Now</button>
+            <button className='btn2'><a href=""> Buy Now </a></button>
             <button className='btn2 dark-btn2'>
               <img src={info_icon} alt=""/>
-              More Info
+              <a href=""><a href=""> More Info </a> </a>
             </button>
           </div>
         </div>

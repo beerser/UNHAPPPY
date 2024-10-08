@@ -175,7 +175,13 @@
         font-size: 12px;
     }
 }
-
+.btn2 a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    white-space: nowrap;
+    align-items: center; /* จัดให้อยู่แนวนอน */
+}
 @media (max-width: 500px) {
     .caption-img2 {
         display: none;
