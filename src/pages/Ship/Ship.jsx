@@ -24,6 +24,18 @@ function Ship() {
     fetchReceipt();
   }, []);
 
+  // ฟังก์ชันสำหรับล้างสินค้าจาก cart
+  const clearCart = () => {
+    localStorage.removeItem('cart'); // ลบข้อมูล cart จาก localStorage
+  };
+
+  // เมื่อผู้ใช้ออกจากหน้าใบเสร็จ (เปลี่ยนไปหน้าอื่น)
+  useEffect(() => {
+    return () => {
+      clearCart(); // ล้างสินค้าจาก cart เมื่อออกจากหน้า
+    };
+  }, []);
+
   return (
     <div className='receipt-background'>
       <div className='receipt-container'>
@@ -73,7 +85,7 @@ function Ship() {
 
         <div className='receipt-footer'>
           <p>_________________________</p>
-          <p>ผู้รับสินค้า</p> {/* แก้ไขจาก "ผู้สิ้นค้า" เป็น "ผู้รับสินค้า" */}
+          <p>ผู้รับสินค้า</p>
         </div>
 
         {/* ปุ่มย้อนกลับ */}
