@@ -15,10 +15,11 @@ import {
     doc, 
     updateDoc, 
     increment,
-    getDoc // Added correct import for getting document data
+    getDoc, // Added correct import for getting document data
+    orderBy, 
+    limit
 } from "firebase/firestore";
 import { toast } from "react-toastify";
-
 
 // Firebase configuration
 const firebaseConfig = {
@@ -50,7 +51,6 @@ const signup = async (name, email, password) => {
             role: "users",
             profile:"",
             gender:"",
-            
         });
         toast.success('Successfully signed up!');
     } catch (error) {
@@ -156,5 +156,17 @@ const addToCartAndUpdateStock = async (productId, quantity) => {
     }
 };
 
-export { auth, db, login, signup, logout, searchProducts, updateStock, addToCartAndUpdateStock };
+// ฟังก์ชันสำหรับดึงข้อมูลใบเสร็จจาก Firestore
+const getReceipt = async () => {
+    try {
+        const q = query(collection(db, 'receipts'), orderBy('timestamp', 'desc'), limit(1));
+        const querySnapshot = await getDocs(q);
+        const receipt = querySnapshot.docs[0].data();
+        return receipt;
+    } catch (error) {
+        console.error("Error fetching receipt:", error);
+        return null;
+    }
+};
 
+export { auth, db, login, signup, logout, searchProducts, updateStock, addToCartAndUpdateStock, getReceipt };

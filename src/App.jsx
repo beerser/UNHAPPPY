@@ -15,6 +15,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from './firebase'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Ship from './pages/Ship/Ship'
 
 
 
@@ -68,6 +69,7 @@ const App = () => {
         <Route path='/qrcode' element={<Qrcode />} />
         <Route path='/success' element={<Success/>} />
         <Route path='/profile' element={<Profile/>} />
+        <Route path='/ship' element={<Ship/>} />
       </Routes>
     </div>
   )

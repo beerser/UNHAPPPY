@@ -1,0 +1,115 @@
+/* พื้นหลังของหน้าใบเสร็จ */
+.receipt-background {
+    background-color: #2d2d2b; /* พื้นหลังแบบเข้ม */
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+  
+/* กรอบของใบเสร็จ */
+.receipt-container {
+    background-color: white; /* พื้นหลังสีขาวภายในกรอบ */
+    padding: 30px;
+    border: 3px solid #343A40; /* เปลี่ยนกรอบเป็นสีดำ */
+    /* ถ้าต้องการใช้สีเขียวเปลี่ยนเป็น: */
+    /* border: 3px solid #28A745; */ /* สีเขียว */
+    border-radius: 15px; /* มุมโค้งมน */
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+    font-family: 'Arial', sans-serif;
+}
+  
+/* ส่วนหัว */
+.receipt-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+  
+.receipt-header h2 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
+    color: #343A40; /* เปลี่ยนเป็นสีดำ */
+    /* หรือใช้สีเขียว: */
+    /* color: #28A745; */ /* สีเขียว */
+}
+  
+/* รายละเอียดใบเสร็จ */
+.receipt-details {
+    margin-bottom: 20px;
+    color: #6d6d6eb3; /* สีเทาอ่อน */
+    font-size: 16px;
+}
+  
+/* ตารางรายการ */
+.receipt-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+  
+.receipt-table th,
+.receipt-table td {
+    border: 1px solid #343A40; /* สีกรอบตาราง */
+    padding: 12px;
+    text-align: center;
+}
+  
+.receipt-table th {
+    background-color: #343A40; /* เปลี่ยนพื้นหลังหัวตารางเป็นสีดำ */
+    /* หรือใช้สีเขียว: */
+    /* background-color: #28A745; */ /* สีเขียว */
+    color: white; /* สีของตัวหนังสือหัวตาราง */
+    text-transform: uppercase; /* เปลี่ยนเป็นตัวอักษรพิมพ์ใหญ่ */
+    font-weight: bold;
+}
+  
+.receipt-table td {
+    background-color: #fff;
+    color: #343A40; /* สีข้อความในตาราง */
+}
+  
+/* ส่วนรวมทั้งหมด */
+.text-right {
+    text-align: right;
+}
+  
+/* ฟุตเตอร์ของใบเสร็จ */
+.receipt-footer {
+    text-align: right;
+    margin-top: 40px;
+}
+  
+.receipt-footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* ปุ่มย้อนกลับ */
+.back-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-button {
+    background-color: #343A40; /* ปุ่มสีดำ */
+    /* ถ้าต้องการใช้สีเขียวเปลี่ยนเป็น: */
+    /* background-color: #28A745; */ /* สีเขียว */
+    color: white;
+    padding: 10px 20px;
+    border: none; /* ลบขอบของปุ่ม */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #212529; /* เปลี่ยนสีเมื่อ hover เป็นดำเข้ม */
+    /* ถ้าใช้สีเขียว hover เปลี่ยนเป็นสีเขียวเข้ม: */
+    /* background-color: #218838; */ /* สีเขียวเข้ม */
+}
