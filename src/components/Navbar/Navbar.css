@@ -47,14 +47,16 @@
     color: #e5e5e5 !important;
     font-size: 13px !important;
     cursor: pointer !important;  
+    text-decoration: none;
 }
 
-.dropdown:hover {
+.dropdown p:hover {
     color: #fd0000 !important;
 }
 
 .profile:hover {
     color: #fd0000 !important;
+
 }
 
 .navbar-right {
