@@ -1,6 +1,7 @@
 .collections{
     position: relative;
-    background: rgba(239, 240, 236, 0.76);
+    background: rgb(105, 100, 100);
+    background: radial-gradient(circle, rgb(97, 92, 92) 41%, rgba(0,57,255,0.27512254901960786) 100%);
    
 }
 .coll{
@@ -8,4 +9,7 @@
 }
 .nav{
     display: flex;
+}
+.fot{
+    background: black;
 }

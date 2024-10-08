@@ -160,6 +160,10 @@
     width: 40%;
     margin-left: 4%;
 }
+.more-cards h2{
+    display: inline;
+    margin-left: 70px;
+}
 
 @media (max-width: 1024px) {
     .hero-caption .title-cards {
