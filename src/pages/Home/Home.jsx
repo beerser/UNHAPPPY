@@ -66,10 +66,10 @@ const Home = () => {
         <div className="hero-caption">
           <div className="capcha"><img src={op} className='caption-img' alt="" />
           <div className="hero-btns">
-            <button className='btn'><a href=""> Buy Now </a></button>
+            <button className='btn'><a href="/collections"> Buy Now </a></button>
             <button className='btn dark-btn'>
               <img src={info_icon} alt="info" />
-              <a href=""> <a href=""> More Info </a> </a>
+              <a href="/collections"> More Info  </a>
             </button>
           </div></div>
         </div>

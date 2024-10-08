@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../../firebase'; // ตรวจสอบให้แน่ใจว่าเส้นทางนี้ถูกต้อง
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import './Profile.css';
+import { Navigate } from 'react-router-dom';
 
 const Profile = () => {
   const [gender, setGender] = useState('Male');
@@ -53,6 +54,7 @@ const Profile = () => {
         profilePic
       }, { merge: true }); // ใช้ merge เพื่อไม่ให้ลบข้อมูลที่มีอยู่
       alert('Profile Saved!');
+      
     } catch (error) {
       console.error("Error saving profile:", error);
       alert('Error saving profile.');
