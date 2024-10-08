@@ -64,14 +64,14 @@ const Home = () => {
       <div className="hero">
         <img src={iphone_banner} alt="" className="banner-img" />
         <div className="hero-caption">
-        <img src={op} className='caption-img2' alt="" />
+          <div className="capcha"><img src={op} className='caption-img' alt="" />
           <div className="hero-btns">
             <button className='btn'>Buy Now</button>
             <button className='btn dark-btn'>
               <img src={info_icon} alt="info" />
               More Info
             </button>
-          </div>
+          </div></div>
         </div>
       </div>
       <div className="more-cards">

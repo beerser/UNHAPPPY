@@ -18,10 +18,11 @@
     bottom: 0;
 }
 
-.caption-img1 {
+.capimg1 {
     width: 30%;
     max-width: 420px;
-    margin-bottom: 30px;
+    margin-left: 0px !important;
+    margin-bottom: 0px;
 }
 
 .add-to-cart-btn {

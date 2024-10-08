@@ -4,7 +4,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import iphone_banner from '../../assets/xiaomi-kab-shop.jpg';
 import info_icon from '../../assets/info_icon.png';
 import Footer from '../../components/Footer/Footer';
-import op from '../../assets/iPhone_all_new.png';
+import opo from '../../assets/xiaomi-4.svg';
 import { searchProducts } from '../../firebase'; // นำเข้าฟังก์ชันดึงข้อมูล
 import { useNavigate } from 'react-router-dom'; // ใช้นำทาง
 
@@ -61,7 +61,7 @@ function Xiaomi() {
       <div className="hero1">
         <img src={iphone_banner} alt="" className='banner-img1' />
         <div className="hero-caption1">
-          <img src={op} className='caption-img1' alt="" />
+          <img src={opo} className='capimg1' alt="" />
           <div className="hero-btns1">
             <button className='btn1'> Buy Now </button>
             <button className='btn1 drak-btn1'>

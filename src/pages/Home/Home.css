@@ -3,24 +3,26 @@
 }
 
 .banner-img {
+    position:relative;
     width: 100%;
     height: auto;
     max-height: 100vh;
     mask-image: linear-gradient(to right, transparent, black 35%);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 5%);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 35%);
 }
 
 .hero-caption {
-    position: absolute;
+    position: absolute; 
     width: 100%;
     padding-left: 6%;
     bottom: 0;
 }
 
-.caption-img {
+.caption-img { 
+    margin-left: -10px !important;
     width: 30%;
     max-width: 420px;
-    margin-bottom: 30px;
+    margin-bottom: -9px !important;
 }
 
 .add-to-cart-btn {
@@ -88,12 +90,15 @@
 }
 
 .more-cards {
-    padding-left: 6%;
+    padding-left: 1%;
+    /* margin-top: 27%; */
+    margin-left: -20px;
     position: relative;
 }
 
 .product-container {
     display: flex;
+    position: relative;
     overflow-x: auto;
     padding: 20px 0;
     overflow-x: hidden;

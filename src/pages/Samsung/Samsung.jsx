@@ -4,7 +4,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import iphone_banner from '../../assets/samsung-lung-dome.jpg';
 import info_icon from '../../assets/info_icon.png';
 import Footer from '../../components/Footer/Footer';
-import op from '../../assets/iPhone_all_new.png';
+import opp from '../../assets/b0b60c2d2818953a248f765f875a5e94.png';
 import { searchProducts } from '../../firebase'; // นำเข้าฟังก์ชันดึงข้อมูล
 import { useNavigate } from 'react-router-dom'; // ใช้นำทาง
 
@@ -62,7 +62,7 @@ function Samsung() {
       <div className="hero2">
         <img src={iphone_banner} alt="" className='banner-img2' />
         <div className="hero-caption2">
-          <img src={op} className='caption-img2' alt="" />
+          <img src={opp} className='capn-img2' alt="" />
           <div className="hero-btns2">
             <button className='btn2'>Buy Now</button>
             <button className='btn2 dark-btn2'>
